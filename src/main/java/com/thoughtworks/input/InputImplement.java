@@ -15,7 +15,7 @@ public class InputImplement implements InputInterface {
 
 
     /**
-     * 将输入的字符串进行处理，如果有内容错误或者格式错误直接抛出异常
+     * handle input string,throw exception when exception happend
      *
      * @param input String
      * @return HashMap<String,Snapshot>
