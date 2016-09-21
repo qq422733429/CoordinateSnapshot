@@ -1,19 +1,25 @@
 package com.thoughtworks.inputTest;
 
-import com.thoughtworks.input.InputImplement;
 import com.thoughtworks.input.InputInterface;
+import com.thoughtworks.input.inputImplement.InputImplement;
 import com.thoughtworks.model.Snapshot;
 import org.junit.Test;
-import static junit.framework.TestCase.assertEquals;
+
 import java.util.HashMap;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.core.IsNull.notNullValue;
+import static org.junit.Assert.assertThat;
 
 /**
  * Created by peter on 2016/9/20 0020.
  */
 public class InputStringTest {
-
+    /**
+     * test example input
+     */
     @Test
-    public void rightInputTest(){
+    public void rightInputTestWithThreeSnapshot(){
         String data = "e4e87cb2-8e9a-4749-abb6-26c59344dfee\n" +
                 "2016/09/02 22:30:46\n" +
                 "cat1 10 9\n" +
@@ -26,7 +32,49 @@ public class InputStringTest {
                 "cat1 12 8 3 4";
         InputInterface inputInterface = new InputImplement();
         HashMap<String,Snapshot> result = inputInterface.handleInputString(data);
-        System.out.println();
+        assertThat(result, is(notNullValue()));
     }
+
+    /**
+     * test right two snapshot
+     */
+    @Test
+    public void rightInputTestWithTwoSnapshot(){
+        String data = "e4e87cb2-8e9a-4749-abb6-26c59344dfee\n" +
+                "2016/09/02 22:30:46\n" +
+                "cat1 10 9\n" +
+                "351055db-33e6-4f9b-bfe1-16f1ac446ac1\n" +
+                "2016/09/02 22:30:52\n" +
+                "cat1 10 9 2 -1\n" +
+                "cat2 2 3\n";
+        InputInterface inputInterface = new InputImplement();
+        HashMap<String,Snapshot> result = inputInterface.handleInputString(data);
+        assertThat(result, is(notNullValue()));
+    }
+
+    /**
+     * test right fout snapshot
+     */
+    @Test
+    public void rightInputTestWithfourSnapshot(){
+        String data = "e4e87cb2-8e9a-4749-abb6-26c59344dfee\n" +
+                "2016/09/02 22:30:46\n" +
+                "cat1 10 9\n" +
+                "351055db-33e6-4f9b-bfe1-16f1ac446ac1\n" +
+                "2016/09/02 22:30:52\n" +
+                "cat1 10 9 2 -1\n" +
+                "cat2 2 3\n"+
+                "dcfa0c7a-5855-4ed2-bc8c-4accae8bd155\n" +
+                "2016/09/02 22:31:02\n" +
+                "cat1 12 8 3 4\n"+
+                "351055db-33e7-4f9b-bfe1-16f1ac446ac1\n" +
+                "2016/09/02 22:32:59\n" +
+                "cat1 15 12 2 -1\n";
+        InputInterface inputInterface = new InputImplement();
+        HashMap<String,Snapshot> result = inputInterface.handleInputString(data);
+        assertThat(result, is(notNullValue()));
+    }
+
+
 
 }

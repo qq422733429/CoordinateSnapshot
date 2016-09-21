@@ -1,5 +1,6 @@
-package com.thoughtworks.input;
+package com.thoughtworks.input.inputImplement;
 
+import com.thoughtworks.input.InputInterface;
 import com.thoughtworks.model.AnimalLocation;
 import com.thoughtworks.model.Snapshot;
 
@@ -49,7 +50,6 @@ public class InputImplement implements InputInterface {
                 }
             }
         }
-        System.out.println("peter");
         return dateMap;
     }
 }
