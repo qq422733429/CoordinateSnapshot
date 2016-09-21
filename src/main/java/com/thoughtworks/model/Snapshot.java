@@ -11,6 +11,11 @@ public class Snapshot {
     private Date time;
     private LinkedList<AnimalLocation> locations;
 
+    public Snapshot(String id) {
+        this.locations = new LinkedList<>();
+        this.id = id;
+    }
+
     public String getId() {
         return id;
     }

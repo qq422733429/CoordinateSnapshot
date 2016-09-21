@@ -13,14 +13,14 @@ public class AnimalLocation {
         location = new Location(Integer.parseInt(items[1]),Integer.parseInt(items[2]));
     }
 
-    public boolean updateLocation(Location preLocation,String detail) {
+    public boolean updateLocation(Location preLocation,String detail,String id) {
         if (preLocation.equals(location)) {
             String[] items = detail.split(" ");
             location.setX(location.getX() + Integer.parseInt(items[3]));
             location.setY(location.getY() + Integer.parseInt(items[4]));
             return true;
         } else {
-            throw new IllegalArgumentException("Conflict argument");
+            throw new IllegalArgumentException("Conflict found at "+id);
         }
     }
 
