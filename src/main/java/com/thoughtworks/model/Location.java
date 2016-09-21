@@ -3,7 +3,7 @@ package com.thoughtworks.model;
 /**
  * Created by peter on 2016/9/20 0020.
  */
-public class Location {
+public class Location{
     private int x;
     private int y;
     public Location(int x,int y){
@@ -45,4 +45,17 @@ public class Location {
         result = 31 * result + y;
         return result;
     }
+
+    @Override
+    public String toString() {
+        return x+" "+y;
+    }
+
+//    @Override
+//    protected Location clone() throws CloneNotSupportedException {
+//        Location location = (Location)super.clone();
+//        location.setX(x);
+//        location.setY(y);
+//        return  location;
+//    }
 }

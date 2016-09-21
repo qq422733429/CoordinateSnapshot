@@ -147,5 +147,17 @@ public class InputStringTest {
             assertThat(ex.getMessage(), containsString("Conflict found at dcfa0c7a-5855-4ed2-bc8c-4accae8bd155"));
         }
     }
-
+    /**
+     * test wrong example input with empty input
+     */
+    @Test
+    public void wrongInputTestWithEmptyInput(){
+        String data="";
+        try {
+            InputInterface inputInterface = new InputImplement();
+            inputInterface.handleInputString(data);
+        } catch (IllegalArgumentException ex) {
+            assertThat(ex.getMessage(), containsString("Invalid format."));
+        }
+    }
 }

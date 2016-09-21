@@ -58,4 +58,16 @@ public class AnimalLocation {
         result = 31 * result + (location != null ? location.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return name+" "+location.toString();
+    }
+//    @Override
+//    public AnimalLocation clone() throws CloneNotSupportedException {
+//        AnimalLocation animalLocation = (AnimalLocation)super.clone();
+//        animalLocation.setLocation(location.clone());
+//        animalLocation.setName(name);
+//        return animalLocation;
+//    }
 }

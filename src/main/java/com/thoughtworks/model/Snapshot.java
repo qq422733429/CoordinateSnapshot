@@ -60,4 +60,5 @@ public class Snapshot {
         result = 31 * result + (locations != null ? locations.hashCode() : 0);
         return result;
     }
+
 }

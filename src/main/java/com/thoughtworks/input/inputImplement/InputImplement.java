@@ -6,6 +6,7 @@ import com.thoughtworks.model.Snapshot;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 
 /**
@@ -21,26 +22,27 @@ public class InputImplement implements InputInterface {
     @Override
     public HashMap<String, Snapshot> handleInputString(String input) {
         HashMap<String, Snapshot> dateMap = new HashMap<>();
-        HashMap<String, AnimalLocation> animalMap = new HashMap<>();
+        LinkedHashMap<String, AnimalLocation> animalMap = new LinkedHashMap<>();
         try {
+            if (input.equals("")) {
+                throw new IllegalArgumentException("empty input");
+            }
             String lines[] = input.split("\n");
             for (int i = 0; i < lines.length; i++) {
                 while (i < lines.length && lines[i].trim() != "") {
                     Snapshot snapshot = new Snapshot(lines[i++]);
-                    try {
-                        snapshot.setTime(new Date(lines[i++]));
-                    } catch (IllegalArgumentException e) {
-                        throw new IllegalArgumentException("Invalid format.");
-                    }
+                    snapshot.setTime(new Date(lines[i++]));
                     while (i < lines.length && lines[i].trim() != "") {
                         AnimalLocation animal = new AnimalLocation(lines[i]);
                         if (animalMap.containsKey(animal.getName())) {
                             animal.updateLocation(animalMap.get(animal.getName()).getLocation(), lines[i], snapshot.getId());
                             animalMap.put(animal.getName(), animal);
-                            snapshot.getLocations().add(animal);
                         } else {
-                            snapshot.getLocations().add(animal);
                             animalMap.put(animal.getName(), animal);
+                        }
+                        snapshot.getLocations().clear();
+                        for (AnimalLocation item : animalMap.values()) {
+                            snapshot.getLocations().add(item);
                         }
                         dateMap.put(snapshot.getId(), snapshot);
                         i++;
@@ -52,6 +54,9 @@ public class InputImplement implements InputInterface {
             }
             return dateMap;
         } catch (Exception e) {
+            if (e.getMessage()==null) {
+                throw new IllegalArgumentException("Invalid format.");
+            }
             String[] errors = e.getMessage().split(" ");
             if (!errors[0].equals("Conflict")) {
                 throw new IllegalArgumentException("Invalid format.");
