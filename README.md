@@ -2,7 +2,7 @@
 Thoughtworks秋招内推作业题，可直接见github：(https://github.com/qq422733429/CoordinateSnapshot)
 
 ### travis-ci
-[![travis-ci](https://api.travis-ci.org/qq422733429/CoordinateSnapshot.svg)](https://travis-ci.org/qq422733429/CoordinateSnapshot-pos)
+[![travis-ci](https://api.travis-ci.org/qq422733429/CoordinateSnapshot.svg)](https://travis-ci.org/qq422733429/CoordinateSnapshot)
 
 ### BUILD
 
