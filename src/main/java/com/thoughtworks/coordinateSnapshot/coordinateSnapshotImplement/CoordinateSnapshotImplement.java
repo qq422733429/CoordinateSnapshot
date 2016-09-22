@@ -8,9 +8,6 @@ import com.thoughtworks.output.OutputInterface;
 import com.thoughtworks.output.outputImplement.OutputImplement;
 import java.util.HashMap;
 
-/**
- * Created by peter on 2016/9/22 0022.
- */
 public class CoordinateSnapshotImplement implements CoordinateSnapshot {
 
     /**

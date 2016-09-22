@@ -1,8 +1,5 @@
 package com.thoughtworks.model;
 
-/**
- * Created by peter on 2016/9/20 0020.
- */
 public class Location{
     private int x;
     private int y;

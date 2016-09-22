@@ -10,9 +10,6 @@ import com.thoughtworks.output.outputImplement.OutputImplement;
 
 import java.util.HashMap;
 
-/**
- * Created by peter on 2016/9/20 0020.
- */
 public class Application {
     public static void main(String[] args) {
         String data = "e4e87cb2-8e9a-4749-abb6-26c59344dfee\n" +

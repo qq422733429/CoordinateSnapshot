@@ -14,9 +14,6 @@ import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.assertThat;
 
-/**
- * Created by peter on 2016/9/20 0020.
- */
 public class InputStringTest {
     @Rule
     public ExpectedException thrown= ExpectedException.none();

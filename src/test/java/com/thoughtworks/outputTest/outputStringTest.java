@@ -17,9 +17,6 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
-/**
- * Created by peter on 2016/9/22 0022.
- */
 public class outputStringTest {
     HashMap<String,Snapshot> dataMap = new HashMap<>();
     OutputInterface output = new OutputImplement();

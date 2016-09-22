@@ -6,9 +6,6 @@ import com.thoughtworks.output.OutputInterface;
 import java.util.HashMap;
 import java.util.LinkedList;
 
-/**
- * Created by peter on 2016/9/21 0021.
- */
 public class OutputImplement implements OutputInterface {
     /**
      * find result from data map

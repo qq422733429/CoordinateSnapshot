@@ -10,9 +10,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
-/**
- * Created by peter on 2016/9/20 0020.
- */
 public class InputImplement implements InputInterface {
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     /**

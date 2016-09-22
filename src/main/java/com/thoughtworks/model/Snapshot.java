@@ -3,9 +3,6 @@ package com.thoughtworks.model;
 import java.util.Date;
 import java.util.LinkedList;
 
-/**
- * Created by peter on 2016/9/20 0020.
- */
 public class Snapshot {
     private String id;
     private Date time;
