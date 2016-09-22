@@ -21,12 +21,15 @@ comment here[提交作者]
 **Example:** `modifier readme.md[王鹏鉴]`
 
 ###项目结构
+
 #####整个项目共分为三个接口和实现，分别是：
+
 * 输入接口： 
 ```
 public HashMap<String,Snapshot> handleInputString(String input);
 ```
-    * 逐行读取输入的字符串，并将其每一部分构成一个Snapshot,并将其放入以快照ID为key值的hashmap中，如果有格式错误或者数据错误，都会抛出对应的异常。
+    * 逐行读取输入的字符串，并将其每一部分构成一个Snapshot,并将其放入以快照ID为key值的hashmap中，
+    如果有格式错误或者数据错误，都会抛出对应的异常。
 * 输出接口： 
 ```
 public String handleInputString(HashMap<String,Snapshot> dataMap,String foundId);
@@ -48,6 +51,7 @@ public String getSnapShot(String historyData, String id);
 * 3、时间格式错误测试，报异常：throw new IllegalArgumentException("Invalid format.");
 * 4、位置数据错误测试，报异常：throw new IllegalArgumentException("Conflict found at "+id);
 * 5、空输入测试
+
 #####输出单元测试（首先mock的一个正确输入的HashMap dateMap，然后从中测试各种输出情况）
 * 1、分别对第一条、第二条、第三条Snapshot进行测试
 * 2、错误或空dataMap测试
