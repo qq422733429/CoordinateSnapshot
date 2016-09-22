@@ -20,6 +20,8 @@ import static org.junit.Assert.assertThat;
 public class InputStringTest {
     @Rule
     public ExpectedException thrown= ExpectedException.none();
+
+    InputInterface inputInterface = new InputImplement();
     /**
      * test example input
      */
@@ -35,7 +37,6 @@ public class InputStringTest {
                 "dcfa0c7a-5855-4ed2-bc8c-4accae8bd155\n" +
                 "2016/09/02 22:31:02\n" +
                 "cat1 12 8 3 4";
-        InputInterface inputInterface = new InputImplement();
         HashMap<String,Snapshot> result = inputInterface.handleInputString(data);
         assertThat(result, is(notNullValue()));
     }
@@ -52,7 +53,6 @@ public class InputStringTest {
                 "2016/09/02 22:30:52\n" +
                 "cat1 10 9 2 -1\n" +
                 "cat2 2 3\n";
-        InputInterface inputInterface = new InputImplement();
         HashMap<String,Snapshot> result = inputInterface.handleInputString(data);
         assertThat(result, is(notNullValue()));
     }
@@ -75,7 +75,6 @@ public class InputStringTest {
                 "351055db-33e7-4f9b-bfe1-16f1ac446ac1\n" +
                 "2016/09/02 22:32:59\n" +
                 "cat1 15 12 2 -1\n";
-        InputInterface inputInterface = new InputImplement();
         HashMap<String,Snapshot> result = inputInterface.handleInputString(data);
         assertThat(result, is(notNullValue()));
     }
@@ -95,7 +94,6 @@ public class InputStringTest {
                 "2016/09/02 22:31:02\n" +
                 "cat1 12 8 3 4";
         try {
-            InputInterface inputInterface = new InputImplement();
             inputInterface.handleInputString(data);
         } catch (IllegalArgumentException ex) {
             assertThat(ex.getMessage(), containsString("Invalid format."));
@@ -117,7 +115,6 @@ public class InputStringTest {
                 "2016/09/02 22:31:02\n" +
                 "cat1 12 8 3 4";
         try {
-            InputInterface inputInterface = new InputImplement();
             inputInterface.handleInputString(data);
         } catch (IllegalArgumentException ex) {
             assertThat(ex.getMessage(), containsString("Invalid format."));
@@ -139,7 +136,6 @@ public class InputStringTest {
                 "2016/09/02 22:31:02\n" +
                 "cat1 11 8 3 4";
         try {
-            InputInterface inputInterface = new InputImplement();
             inputInterface.handleInputString(data);
         } catch (IllegalArgumentException ex) {
             assertThat(ex.getMessage(), containsString("Conflict found at dcfa0c7a-5855-4ed2-bc8c-4accae8bd155"));
@@ -151,7 +147,6 @@ public class InputStringTest {
     @Test
     public void wrongInputTestWithEmptyInput(){
         String data="";
-        InputInterface inputInterface = new InputImplement();
         HashMap<String,Snapshot> result = inputInterface.handleInputString(data);
         assertThat(result, is(nullValue()));
     }

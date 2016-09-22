@@ -4,6 +4,8 @@ import com.thoughtworks.input.InputInterface;
 import com.thoughtworks.model.AnimalLocation;
 import com.thoughtworks.model.Snapshot;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -12,6 +14,7 @@ import java.util.LinkedHashMap;
  * Created by peter on 2016/9/20 0020.
  */
 public class InputImplement implements InputInterface {
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     /**
      * handle input string,throw exception when exception happend
      *
@@ -41,9 +44,10 @@ public class InputImplement implements InputInterface {
         }
     }
 
+
     private int loadEachSnapshot(HashMap<String, Snapshot> dateMap, LinkedHashMap<String, AnimalLocation> animalMap, int i, String[] lines) {
         Snapshot snapshot = new Snapshot(lines[i++]);
-        snapshot.setTime(new Date(lines[i++]));
+        snapshot.setTime(checkDateStyle(lines[i++]));
         while (i < lines.length && lines[i].trim() != "") {
             loadEachAnimalLocation(animalMap, lines[i], snapshot);
             dateMap.put(snapshot.getId(), snapshot);
@@ -53,6 +57,16 @@ public class InputImplement implements InputInterface {
             }
         }
         return i;
+    }
+
+    private Date checkDateStyle(String line) {
+        Date date = null;
+        try {
+            date = sdf.parse(line);
+        } catch (ParseException e) {
+            throw new IllegalArgumentException();
+        }
+        return date;
     }
 
     private void loadEachAnimalLocation(LinkedHashMap<String, AnimalLocation> animalMap, String line, Snapshot snapshot) {
