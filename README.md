@@ -7,7 +7,7 @@ Thoughtworks秋招内推作业题，可直接见github：(https://github.com/qq4
 ### BUILD
 
 #### Generate IntelliJ IDEA project
-`./gradlew cleanIdea idea`
+`./gradlew cleanIdea idea`（linux）  `gradlew cleanIdea idea`(windows)
 
 Open the `thought-pos.ipr` using IntelliJ
 
