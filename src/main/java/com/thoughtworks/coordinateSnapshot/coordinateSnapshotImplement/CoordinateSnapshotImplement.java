@@ -6,7 +6,6 @@ import com.thoughtworks.input.inputImplement.InputImplement;
 import com.thoughtworks.model.Snapshot;
 import com.thoughtworks.output.OutputInterface;
 import com.thoughtworks.output.outputImplement.OutputImplement;
-
 import java.util.HashMap;
 
 /**

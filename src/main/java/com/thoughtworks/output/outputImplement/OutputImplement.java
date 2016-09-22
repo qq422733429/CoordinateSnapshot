@@ -3,7 +3,6 @@ package com.thoughtworks.output.outputImplement;
 import com.thoughtworks.model.AnimalLocation;
 import com.thoughtworks.model.Snapshot;
 import com.thoughtworks.output.OutputInterface;
-
 import java.util.HashMap;
 import java.util.LinkedList;
 

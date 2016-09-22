@@ -8,12 +8,10 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import java.util.HashMap;
-import java.util.IllegalFormatException;
-
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.core.IsNull.notNullValue;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -153,11 +151,8 @@ public class InputStringTest {
     @Test
     public void wrongInputTestWithEmptyInput(){
         String data="";
-        try {
-            InputInterface inputInterface = new InputImplement();
-            inputInterface.handleInputString(data);
-        } catch (IllegalArgumentException ex) {
-            assertThat(ex.getMessage(), containsString("Invalid format."));
-        }
+        InputInterface inputInterface = new InputImplement();
+        HashMap<String,Snapshot> result = inputInterface.handleInputString(data);
+        assertThat(result, is(nullValue()));
     }
 }

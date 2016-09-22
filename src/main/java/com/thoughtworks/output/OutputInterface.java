@@ -1,7 +1,6 @@
 package com.thoughtworks.output;
 
 import com.thoughtworks.model.Snapshot;
-
 import java.util.HashMap;
 
 /**

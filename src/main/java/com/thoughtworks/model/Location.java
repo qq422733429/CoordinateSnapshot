@@ -51,11 +51,4 @@ public class Location{
         return x+" "+y;
     }
 
-//    @Override
-//    protected Location clone() throws CloneNotSupportedException {
-//        Location location = (Location)super.clone();
-//        location.setX(x);
-//        location.setY(y);
-//        return  location;
-//    }
 }

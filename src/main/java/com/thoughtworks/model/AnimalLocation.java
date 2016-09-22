@@ -63,11 +63,4 @@ public class AnimalLocation {
     public String toString() {
         return name+" "+location.toString();
     }
-//    @Override
-//    public AnimalLocation clone() throws CloneNotSupportedException {
-//        AnimalLocation animalLocation = (AnimalLocation)super.clone();
-//        animalLocation.setLocation(location.clone());
-//        animalLocation.setName(name);
-//        return animalLocation;
-//    }
 }
