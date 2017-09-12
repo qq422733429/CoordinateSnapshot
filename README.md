@@ -1,4 +1,4 @@
-# TwWorks/BowlingGame
+# BadmintonCourtBill
 Thoughtworks秋招内推作业题，可直接见github：(https://github.com/sugarliu33/TwWorks)
 
 ### travis-ci (https://travis-ci.org/sugarliu33/TwWorks)
@@ -18,7 +18,7 @@ Open the `thought-pos.ipr` using IntelliJ
 
 [提交作者]comment here 
 
-**Example:** `[王鹏鉴]modifier readme.md`
+**Example:** `[刘楠楠]modifier readme.md`
 
 ###项目结构
 
@@ -34,6 +34,7 @@ Open the `thought-pos.ipr` using IntelliJ
 
 ###### 四个接口分别对应了三个单元测试和一个集成测试，具体如下：
 1、流程控制模块对应的是一个集成测试（```\src\test\java\com\tw\controller\CourtControllerTest.java```)对整个项目的进行了集成测试，对原始的输入到最后的输出统一进行了测试。
+
 2、输入模块、处理模块和输出模块分别对应着三个单元测试，对输入的格式、价格的计算和最后的输出字符串分别进行了具体的测试，对应的类在（```\src\test\java\com\tw\service```）。
    
 
