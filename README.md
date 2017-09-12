@@ -14,6 +14,9 @@ Open the `thought-pos.ipr` using IntelliJ
 #### Run clean and build tasks
 `./gradlew clean build`
 
+#### Run application
+`The main function in /src/main/java/com/tw/BadmintonCourtBill.java`
+
 ### Git提交规范：
 
 [提交作者]comment here 
