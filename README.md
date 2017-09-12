@@ -1,7 +1,7 @@
 # BadmintonCourtBill
 Thoughtworks秋招内推作业题，可直接见github：(https://github.com/sugarliu33/TwWorks)
 
-### travis-ci (https://travis-ci.org/sugarliu33/TwWorks)
+### travis-ci (https://travis-ci.org/sugarliu33/BadmintonCourtBill)
 [![travis-ci](https://travis-ci.org/sugarliu33/BadmintonCourtBill.svg)](https://travis-ci.org/sugarliu33/BadmintonCourtBill)
 
 ### BUILD
