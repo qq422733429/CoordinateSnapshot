@@ -1,8 +1,8 @@
-# CoordinateSnapshot
-Thoughtworks秋招内推作业题，可直接见github：(https://github.com/qq422733429/CoordinateSnapshot)
+# TwWorks/BowlingGame
+Thoughtworks秋招内推作业题，可直接见github：(https://github.com/sugarliu33/TwWorks)
 
-### travis-ci (https://travis-ci.org/qq422733429/CoordinateSnapshot)
-[![travis-ci](https://api.travis-ci.org/qq422733429/CoordinateSnapshot.svg)](https://travis-ci.org/qq422733429/CoordinateSnapshot)
+### travis-ci (https://travis-ci.org/sugarliu33/TwWorks)
+[![travis-ci](https://travis-ci.org/sugarliu33/BadmintonCourtBill.svg)](https://travis-ci.org/sugarliu33/BadmintonCourtBill)
 
 ### BUILD
 
@@ -16,48 +16,24 @@ Open the `thought-pos.ipr` using IntelliJ
 
 ### Git提交规范：
 
-comment here[提交作者] 
+[提交作者]comment here 
 
-**Example:** `modifier readme.md[王鹏鉴]`
+**Example:** `[王鹏鉴]modifier readme.md`
 
 ###项目结构
 
-#####整个项目共分为三个接口和实现，分别是：
+###### 项目结构简单描述 项目共分为四个模块，并分别对应四个接口和四个实现类，具体如下：
 
-* 输入接口： 
-```
-public HashMap<String,Snapshot> handleInputString(String input);
-```
-    * 逐行读取输入的字符串，并将其每一部分构成一个Snapshot,并将其放入以快照ID为key值的hashmap中，
-    如果有格式错误或者数据错误，都会抛出对应的异常。
-* 输出接口： 
-```
-public String handleInputString(HashMap<String,Snapshot> dataMap,String foundId);
-```
-    * 从输入得到的hashmap中，查找foundId条Snapshot，并将其按照输出格式输出，如果有异常，会直接返回错误信息数组。
-* 对外提供服务的接口： 
-```
-public String getSnapShot(String historyData, String id);
-```
-    * 调用输入接口和输出接口，从用户传入的historyData中找到指定的ID，并以字符串返回。
+1、流程控制模块，对应接口（```\src\main\java\com\tw\Controller.java```），主要功能：控制整个项目的流程。
+
+2、输入模块，对应接口（```\src\main\java\com\tw\service\input\InputService.java```），主要功能：将用户输入转化成订单类，并检查输入格式是否合法，输入日期时间格式是否合法
+
+3、处理模块，对应接口（```\src\main\java\com\tw\service\process\ProcessService.java```），主要功能：将输入模块传入的Order类，按照是否是取消订单计算预订费用或违约金，并返回一个是否执行成功的状态（0：表示预订或违约金费用计算成功，1：表示预订订单时发生冲突，2：表示取消订单是未找到预订该订单的记录
+
+4、输出模块，对应接口（```\src\main\java\com\tw\service\ouput\OutputService.java```），主要功能：将经过处理后的Court类处理得到输出字符串
+
+###### 四个接口分别对应了三个单元测试和一个集成测试，具体如下：
+1、流程控制模块对应的是一个集成测试（```\src\test\java\com\tw\controller\CourtControllerTest.java```)对整个项目的进行了集成测试，对原始的输入到最后的输出统一进行了测试。
+2、输入模块、处理模块和输出模块分别对应着三个单元测试，对输入的格式、价格的计算和最后的输出字符串分别进行了具体的测试，对应的类在（```\src\test\java\com\tw\service```）。
    
-###测试
 
-####单元测试
-
-#####输入单元测试
-* 1、示例输入
-* 2、更多或更少条Snapshot测试
-* 3、时间格式错误测试，报异常：throw new IllegalArgumentException("Invalid format.");
-* 4、位置数据错误测试，报异常：throw new IllegalArgumentException("Conflict found at "+id);
-* 5、空输入测试
-
-#####输出单元测试（首先mock的一个正确输入的HashMap dateMap，然后从中测试各种输出情况）
-* 1、分别对第一条、第二条、第三条Snapshot进行测试
-* 2、错误或空dataMap测试
-* 3、错误id测试
-
-####集成测试
-* 1、正确示例测试
-* 2、格式错误示例测试
-* 3、数据错误示例测试
